@@ -801,7 +801,7 @@ button:focus:not(:focus-visible),
 	background: rgba(5, 18, 34, 0.86);
 	box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
 	aspect-ratio: 9 / 16;
-	max-height: 320px;
+	max-height: 342px;
 	justify-self: end;
 	width: min(100%, 200px);
 }
@@ -1282,8 +1282,15 @@ button:focus:not(:focus-visible),
 
 	.contact-cta__media {
 		justify-self: start;
-		max-height: 360px;
-		width: min(100%, 230px);
+		width: min(100%, 320px);
+		max-height: none;
+		aspect-ratio: auto;
+	}
+
+	.contact-cta__media video {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
 	}
 
 	.about-section__grid {
@@ -1401,8 +1408,15 @@ button:focus:not(:focus-visible),
 	}
 
 	.contact-cta__media {
-		width: min(100%, 210px);
-		max-height: 320px;
+		width: min(100%, 320px);
+		max-height: none;
+		aspect-ratio: auto;
+	}
+
+	.contact-cta__media video {
+		width: 100%;
+		height: auto;
+		object-fit: contain;
 	}
 
 	.site-footer {
