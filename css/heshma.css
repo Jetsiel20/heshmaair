@@ -118,11 +118,28 @@ button:focus:not(:focus-visible),
 	box-shadow: 0 14px 38px rgba(0, 0, 0, 0.24);
 }
 
+.site-navbar .container {
+	padding-left: 0.45rem;
+}
+
 .site-brand {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.9rem;
 	color: var(--clean-white);
+}
+
+.site-brand.navbar-brand {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.site-brand img {
+	width: auto;
+	height: 74px;
+	max-width: 180px;
+	display: block;
+	flex-shrink: 0;
 }
 
 .site-brand span {
@@ -131,20 +148,13 @@ button:focus:not(:focus-visible),
 	line-height: 1.1;
 }
 
-.site-brand strong,
 .hero-copy h1 {
 	font-family: var(--font-main);
 }
 
-.site-brand strong {
-	font-size: 1rem;
-	letter-spacing: 0.04em;
-	text-transform: uppercase;
-}
-
 .site-brand small {
 	color: rgba(255, 255, 255, 0.76);
-	font-size: 0.78rem;
+	font-size: 1.03rem;
 }
 
 .site-navbar .nav-link {
@@ -325,7 +335,6 @@ button:focus:not(:focus-visible),
 	z-index: 1;
 }
 
-.hero-visual__badge,
 .hero-visual__card {
 	position: absolute;
 	border-radius: 1.25rem;
@@ -335,32 +344,9 @@ button:focus:not(:focus-visible),
 	display: none;
 }
 
-.hero-visual__badge {
-	top: 0;
-	right: 10%;
-	display: flex;
-	flex-direction: column;
-	gap: 0.3rem;
-	padding: 1rem 1.2rem;
-}
-
-.hero-visual__badge-label {
-	color: var(--action-orange);
-	font-size: 0.8rem;
-	font-family: var(--font-main);
-	font-weight: 700;
-	letter-spacing: 0.08em;
-	text-transform: uppercase;
-}
-
 .hero-visual__card {
 	max-width: 16rem;
 	padding: 1rem 1.1rem;
-}
-
-.hero-visual__card--top {
-	left: 0;
-	top: 20%;
 }
 
 .hero-visual__card--bottom {
@@ -901,6 +887,33 @@ button:focus:not(:focus-visible),
 	margin-bottom: 1rem;
 }
 
+.footer-brand__head img {
+	width: auto;
+	height: 52px;
+	max-width: 180px;
+	object-fit: contain;
+	display: block;
+	flex-shrink: 0;
+}
+
+.footer-brand > a {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.9rem;
+	margin-bottom: 1rem;
+	text-decoration: none;
+	color: var(--clean-white);
+}
+
+.footer-brand > a img {
+	width: auto;
+	height: 52px;
+	max-width: 180px;
+	object-fit: contain;
+	display: block;
+	flex-shrink: 0;
+}
+
 .footer-brand__head h2 {
 	margin: 0;
 	font-family: var(--font-main);
@@ -1105,10 +1118,6 @@ button:focus:not(:focus-visible),
 	font-size: 1.18rem;
 }
 
-.section-anchor {
-	height: 1px;
-}
-
 @keyframes pulseEmergency {
 	0%,
 	100% {
@@ -1307,8 +1316,9 @@ button:focus:not(:focus-visible),
 	}
 
 	.site-brand img {
-		width: 60px;
-		height: 60px;
+		width: auto;
+		height: 62px;
+		max-width: 150px;
 	}
 
 	.hero-section {
@@ -1331,11 +1341,6 @@ button:focus:not(:focus-visible),
 
 	.hero-visual {
 		padding-top: 4rem;
-	}
-
-	.hero-visual__badge {
-		right: 50%;
-		transform: translateX(50%);
 	}
 
 	.hero-visual__card {
