@@ -1,44 +1,105 @@
-# Heshma Air Conditioning Website
+# Heshma Air Conditioning — heshmaairconditioning.com
 
-Conversion-focused static website for Heshma Air Conditioning LLC, including Home, Gallery, Privacy Policy, and Terms of Use pages.
+Static HVAC website. Hosting: Bluehost (cPanel). No backend, no database.
 
-## Live Page Structure
+---
 
-- [index.html](index.html): Main landing page (services, metrics, testimonials, emergency CTA)
-- [gallery.html](gallery.html): CEO video + image gallery proof section
-- [privacy-policy.html](privacy-policy.html): Privacy policy page
-- [terms-of-use.html](terms-of-use.html): Terms of use page
+## Estructura de páginas
 
-## Project Structure
+| Archivo | Descripción |
+|---|---|
+| [index.html](index.html) | Homepage principal — Forney TX, schema @graph, LCP optimizado |
+| [gallery.html](gallery.html) | Galería de trabajos |
+| [404.html](404.html) | Error 404 personalizada — noindex/follow |
+| [ac-repair-forney-tx.html](ac-repair-forney-tx.html) | City page — "AC repair Forney TX" |
+| [ac-repair-dallas-tx.html](ac-repair-dallas-tx.html) | City page — "AC repair Dallas TX" |
+| [privacy-policy.html](privacy-policy.html) | Política de privacidad |
+| [terms-of-use.html](terms-of-use.html) | Términos de uso |
 
-- [css/heshma.css](css/heshma.css): Global styles (layout, shared components, responsive behavior)
-- [css/gallery.css](css/gallery.css): Gallery-specific styles
-- [css/cookie-consent.css](css/cookie-consent.css): Cookie consent banner styles (Home only)
-- [js/heshma.js](js/heshma.js): Main interaction logic (WhatsApp triggers, nav behavior, counters)
-- [js/cookie-consent.js](js/cookie-consent.js): Cookie consent behavior (show delay, accept/reject persistence)
-- [docs/landing-modular-guide.md](docs/landing-modular-guide.md): Internal modular guide
+---
 
-## How To Run Locally
+## Cómo desplegar
 
-This is a static site. You can run it with any local static server.
+Subir archivos via **cPanel → File Manager → public_html**.
+Es HTML estático — no hay build, no hay comandos. Solo subir y reemplazar.
 
-Example with VS Code Live Server:
+---
 
-1. Open the project folder.
-2. Right-click [index.html](index.html).
-3. Select "Open with Live Server".
+## ⏳ PENDIENTE — Por hacer (no olvidar)
 
-## Key Features
+### 🔴 Crítico — sin esto el SEO no impacta
 
-- Mobile-first responsive layout
-- Conversion-oriented CTA strategy (`tel:` + WhatsApp actions)
-- CEO hero video on Gallery page
-- 9-card gallery image section
-- Dedicated Privacy Policy and Terms pages
-- Cookie consent banner on Home page (accept/reject, 6s delay)
+- [ ] **Subir todos los archivos a Bluehost** — nada de lo hecho está en vivo todavía
+- [ ] **Crear `.htaccess`** con:
+  - 301 redirect: `/projects/` → `/gallery.html`
+  - 301 redirect: `/residential-hvac/` → `/ac-repair-forney-tx.html`
+  - ErrorDocument 404 → `/404.html`
+  - Forzar HTTPS
+- [ ] **Optimizar Google Business Profile** — categorías, fotos de trabajos reales, descripción, horario exacto
+- [ ] **Solicitar reseñas reales a clientes** — sin reseñas no hay Local Pack
 
-## Notes
+### 🟡 Alta prioridad
 
-- Images and videos are loaded from local folders under [css/img](css/img), [css/gallery](css/gallery), and [css/video](css/video).
-- Favicon is configured on main pages using the company logo.
-- For content updates, edit text directly in [index.html](index.html) and [gallery.html](gallery.html).
+- [ ] **Comprimir imágenes** (tú lo haces):
+  - [css/gallery/](css/gallery/) — 9 imágenes JPEG sin comprimir
+  - [css/img/logo-df.png](css/img/logo-df.png) — convertir a WebP
+  - [css/img/logo-h.jpeg](css/img/logo-h.jpeg) — verificar si se usa
+  - [css/img/logo-t.jpeg](css/img/logo-t.jpeg) — verificar si se usa
+  - Meta: imágenes <100KB, formato WebP donde sea posible
+- [ ] **Verificar en Google Search Console** después de subir:
+  - Solicitar indexación de: index.html, ac-repair-forney-tx.html, ac-repair-dallas-tx.html
+  - Monitorear que `/projects/` y `/residential-hvac/` dejen de aparecer
+
+### 🟢 Siguiente ronda — city pages adicionales
+
+| Página a crear | Target keyword | Prioridad |
+|---|---|---|
+| ac-repair-rockwall-tx.html | AC repair Rockwall TX | Alta |
+| ac-repair-rowlett-tx.html | AC repair Rowlett TX | Alta |
+| ac-repair-mesquite-tx.html | AC repair Mesquite TX | Alta |
+| ac-repair-sunnyvale-tx.html | AC repair Sunnyvale TX | Media |
+
+### 🔵 Cuando el cliente confirme datos reales
+
+- [ ] **AggregateRating en schema** — solo con número real de reseñas y calificación verificada (riesgo de penalización manual si es falso)
+- [ ] **Formulario de contacto** — alternativa a WhatsApp para usuarios que prefieren no usar la app
+- [ ] **Número de teléfono sticky en mobile** — siempre visible, un toque para llamar
+
+---
+
+## Estado SEO actual
+
+| Capa | Estado | Score |
+|---|---|---|
+| Técnico on-page | ✅ Completado | — |
+| Schema @graph | ✅ Completado | — |
+| City pages (2) | ✅ Completadas | — |
+| Sitemap + robots.txt | ✅ Correctos | — |
+| WhatsApp crawleable | ✅ Todos los archivos | — |
+| En producción | ❌ No subido todavía | — |
+| Google Business Profile | ❓ Sin revisar | — |
+| Reseñas Google | ❓ Sin datos | — |
+| **Score estimado en vivo** | ❌ 3/10 (viejo) | |
+| **Score en local listo para subir** | ✅ 6.5/10 | |
+
+---
+
+## Search Console — datos al 11 mayo 2026
+
+- Homepage: 24 clics / 1,169 impresiones (CTR ~2% — muy bajo, title viejo en prod)
+- `/projects/` — 42 impresiones, 0 clics — página muerta, necesita redirect 301
+- `/residential-hvac/` — 16 impresiones, 0 clics — página muerta, necesita redirect 301
+
+---
+
+## Archivos por no tocar
+
+- [js/cookie-consent.js](js/cookie-consent.js) — funciona, no modificar
+- [css/cookie-consent.css](css/cookie-consent.css) — funciona, no modificar
+- [css/gallery.css](css/gallery.css) — no revisado, no tocar sin auditar primero
+
+## Cómo correr localmente
+
+Sitio estático. Abrir con VS Code Live Server:
+1. Click derecho en `index.html`
+2. "Open with Live Server"

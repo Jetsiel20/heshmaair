@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Page Not Found | Heshma Air Conditioning</title>
+	<meta name="description" content="The page you are looking for could not be found. Return to Heshma Air Conditioning for HVAC repair, installation, and emergency service in Forney and Dallas, TX.">
+	<meta name="robots" content="noindex, follow">
+	<link rel="icon" type="image/webp" href="css/img/logo-oficial.webp">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@400;700&display=swap"></noscript>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/heshma.css">
+	<link rel="stylesheet" href="css/cookie-consent.css">
+	<style>
+		.error-section {
+			position: relative;
+			overflow: hidden;
+			min-height: 100vh;
+			padding: calc(var(--header-offset) + 3rem) 0 5rem;
+			background:
+				linear-gradient(120deg, rgba(0, 35, 71, 0.97) 0%, rgba(0, 35, 71, 0.90) 50%, rgba(0, 59, 124, 0.84) 100%),
+				radial-gradient(circle at top right, rgba(255, 102, 0, 0.22), transparent 30%),
+				var(--primary-navy);
+			color: var(--clean-white);
+			display: flex;
+			align-items: center;
+		}
+
+		.error-section__backdrop {
+			position: absolute;
+			inset: 0;
+			background:
+				linear-gradient(180deg, rgba(0, 0, 0, 0.14), rgba(0, 0, 0, 0.36)),
+				url("css/img/hero-tecnico.webp") center / cover no-repeat;
+			opacity: 0.12;
+		}
+
+		.error-block {
+			position: relative;
+			z-index: 1;
+			text-align: center;
+			max-width: 42rem;
+			margin: 0 auto;
+		}
+
+		.error-block__code {
+			margin: 0 0 0.25rem;
+			font-family: var(--font-main);
+			font-size: clamp(6rem, 18vw, 10rem);
+			font-weight: 800;
+			line-height: 1;
+			color: var(--action-orange);
+			letter-spacing: -0.03em;
+			text-shadow: 0 8px 40px rgba(255, 102, 0, 0.35);
+		}
+
+		.error-block__divider {
+			width: 3rem;
+			height: 4px;
+			background: var(--action-orange);
+			border-radius: 999px;
+			margin: 0 auto 1.5rem;
+		}
+
+		.error-block h1 {
+			font-family: var(--font-main);
+			font-size: clamp(1.6rem, 4vw, 2.4rem);
+			font-weight: 800;
+			margin-bottom: 1rem;
+			line-height: 1.1;
+		}
+
+		.error-block__lead {
+			font-size: 1.06rem;
+			line-height: 1.75;
+			color: rgba(255, 255, 255, 0.82);
+			margin-bottom: 2rem;
+		}
+
+		.error-block__actions {
+			display: flex;
+			gap: 0.9rem;
+			flex-wrap: wrap;
+			justify-content: center;
+			margin-bottom: 2.5rem;
+		}
+
+		.error-block__nav {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			gap: 0.6rem;
+			padding-top: 1.5rem;
+			border-top: 1px solid rgba(255, 255, 255, 0.12);
+		}
+
+		.error-block__nav-label {
+			width: 100%;
+			margin-bottom: 0.4rem;
+			font-size: 0.82rem;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: rgba(255, 255, 255, 0.5);
+		}
+
+		.error-nav-link {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			padding: 0.5rem 1rem;
+			border-radius: 999px;
+			border: 1px solid rgba(255, 255, 255, 0.18);
+			background: rgba(255, 255, 255, 0.06);
+			color: rgba(255, 255, 255, 0.88);
+			font-family: var(--font-main);
+			font-weight: 600;
+			font-size: 0.88rem;
+			transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+		}
+
+		.error-nav-link:hover,
+		.error-nav-link:focus-visible {
+			background: rgba(255, 102, 0, 0.18);
+			border-color: rgba(255, 102, 0, 0.55);
+			color: var(--clean-white);
+		}
+
+		@media (max-width: 767.98px) {
+			.error-block__actions {
+				flex-direction: column;
+				align-items: stretch;
+			}
+
+			.error-block__actions .btn {
+				width: 100%;
+				text-align: center;
+				justify-content: center;
+			}
+		}
+	</style>
+</head>
+<body>
+	<a class="visually-hidden-focusable skip-link" href="#error-content">Skip to main content</a>
+
+	<div class="top-contact-bar">
+		<div class="container">
+			<div class="top-contact-bar__content">
+				<div class="top-contact-bar__items" aria-label="Company service highlights">
+					<span><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> 24/7 Emergency Service</span>
+					<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Forney and Dallas, Texas</span>
+					<span><i class="fa-solid fa-certificate" aria-hidden="true"></i> TACLA Licensed HVAC Authorities</span>
+				</div>
+				<a class="top-contact-bar__call" href="tel:+12144071394" aria-label="Call Heshma Air Conditioning now at 214 407 1394">Call +1 (214) 407-1394</a>
+			</div>
+		</div>
+	</div>
+
+	<header class="site-header">
+		<nav class="navbar navbar-expand-lg fixed-top site-navbar" aria-label="Primary navigation">
+			<div class="container">
+				<a class="navbar-brand site-brand" href="index.html" aria-label="Heshma Air Conditioning home">
+					<img src="css/img/logo-oficial.webp" alt="Heshma Air Conditioning logo" width="120" height="84">
+					<span>
+						<small>Heating, Cooling & Comfort</small>
+					</span>
+				</a>
+
+				<button class="navbar-toggler site-navbar__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="mainNavigation">
+					<ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+						<li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.html#about-preview">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+						<li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+						<li class="nav-item ms-lg-3 mt-3 mt-lg-0">
+							<a class="btn btn-emergency" href="tel:+12144071394" aria-label="Emergency call to Heshma Air Conditioning">Emergency Call</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main id="error-content">
+		<section class="error-section" aria-labelledby="error-heading">
+			<div class="error-section__backdrop" aria-hidden="true"></div>
+			<div class="container">
+				<div class="error-block">
+					<p class="error-block__code" aria-hidden="true">404</p>
+					<div class="error-block__divider" aria-hidden="true"></div>
+					<h1 id="error-heading">Page Not Found</h1>
+					<p class="error-block__lead">
+						The page you are looking for has been moved, deleted, or never existed.<br>
+						Our team is still here 24/7 — let us help you find what you need.
+					</p>
+
+					<div class="error-block__actions" aria-label="Recovery options">
+						<a class="btn btn-hero-primary" href="index.html">
+							<i class="fa-solid fa-house" aria-hidden="true"></i> Go to Homepage
+						</a>
+						<a class="btn btn-hero-secondary" href="tel:+12144071394" aria-label="Call Heshma Air Conditioning">
+							<i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now
+						</a>
+						<button class="btn btn-hero-secondary js-whatsapp-trigger" type="button" data-whatsapp-service="emergency" data-whatsapp-source="404-page" aria-label="Send emergency message on WhatsApp">
+							<i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Us
+						</button>
+					</div>
+
+					<nav class="error-block__nav" aria-label="Quick site navigation">
+						<p class="error-block__nav-label">Or go directly to</p>
+						<a class="error-nav-link" href="index.html#services">
+							<i class="fa-solid fa-snowflake" aria-hidden="true"></i> Services
+						</a>
+						<a class="error-nav-link" href="index.html#location">
+							<i class="fa-solid fa-location-dot" aria-hidden="true"></i> Location
+						</a>
+						<a class="error-nav-link" href="gallery.html">
+							<i class="fa-solid fa-images" aria-hidden="true"></i> Gallery
+						</a>
+						<a class="error-nav-link" href="index.html#testimonials">
+							<i class="fa-solid fa-star" aria-hidden="true"></i> Testimonials
+						</a>
+						<a class="error-nav-link" href="index.html#contact">
+							<i class="fa-solid fa-headset" aria-hidden="true"></i> Contact
+						</a>
+					</nav>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer" aria-labelledby="footer-title">
+		<div class="container">
+			<div class="site-footer__top row g-4">
+				<div class="col-lg-4 col-md-6">
+					<div class="footer-brand">
+						<div class="footer-brand__head">
+							<img src="css/img/logo-oficial.webp" alt="Heshma Air Conditioning logo" width="144" height="101">
+							<div>
+								<p id="footer-title" class="footer-brand__head-name">Heshma Air Conditioning LLC</p>
+								<p>TACLA Licensed HVAC Authorities</p>
+							</div>
+						</div>
+						<p class="footer-brand__text">Reliable heating and cooling solutions for homeowners and businesses in Forney, Dallas, and surrounding areas.</p>
+						<a class="btn btn-footer-cta" href="tel:+12144071394" aria-label="Call Heshma Air Conditioning now">Call +1 (214) 407-1394</a>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-6 col-6">
+					<div class="footer-nav">
+						<h3>Navigate</h3>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="index.html#services">Services</a></li>
+							<li><a href="gallery.html">Gallery</a></li>
+							<li><a href="index.html#metrics">Metrics</a></li>
+							<li><a href="index.html#location">Location</a></li>
+							<li><a href="index.html#testimonials">Testimonials</a></li>
+							<li><a href="index.html#contact">Contact</a></li>
+						</ul>
+						<h3>Service Areas</h3>
+						<ul>
+							<li><a href="ac-repair-forney-tx.html">AC Repair Forney, TX</a></li>
+							<li><a href="ac-repair-dallas-tx.html">AC Repair Dallas, TX</a></li>
+							<li><a href="ac-repair-heath-tx.html">AC Repair Heath, TX</a></li>
+							<li><a href="ac-repair-mesquite-tx.html">Mesquite, TX</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-contact">
+						<h3>Contact</h3>
+						<address>
+							<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 2401 Anton Dr, Forney, TX 75126</span>
+							<a href="tel:+12144071394"><i class="fa-solid fa-phone" aria-hidden="true"></i> +1 (214) 407-1394</a>
+							<a href="mailto:info@heshmaairconditioning.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> info@heshmaairconditioning.com</a>
+							<span><i class="fa-solid fa-clock" aria-hidden="true"></i> 24/7 Emergency Service</span>
+						</address>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6">
+					<div class="footer-social">
+						<h3>Connect</h3>
+						<p>Follow us for updates and recent projects.</p>
+						<div class="footer-social__links" aria-label="Social media links">
+							<a href="https://www.facebook.com/HeshmaAir" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on Facebook">
+								<i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+							</a>
+							<a href="https://www.instagram.com/heshmaairconditioning?igsh=MXdzNTg1ZTU2YnJuMA==" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on Instagram">
+								<i class="fa-brands fa-instagram" aria-hidden="true"></i>
+							</a>
+						</div>
+						<button class="btn btn-footer-secondary js-whatsapp-trigger" type="button" data-whatsapp-service="quote" data-whatsapp-source="404-footer-quote" aria-label="Request service quote on WhatsApp">Request Service</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="site-footer__bottom">
+				<p>© 2026 Heshma Air Conditioning LLC. All Rights Reserved.</p>
+				<div class="site-footer__legal">
+					<a href="privacy-policy.html">Privacy Policy</a>
+					<a href="terms-of-use.html">Terms of Use</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<button class="floating-emergency js-whatsapp-trigger" type="button" data-whatsapp-service="emergency" data-whatsapp-source="404-floating-emergency" aria-label="Open WhatsApp emergency message">
+		<i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+		<span>Emergency 24/7</span>
+	</button>
+
+	<section class="cookie-consent" id="cookie-consent" aria-live="polite" aria-label="Cookie consent" hidden>
+		<div class="cookie-consent__inner">
+			<p class="cookie-consent__text">
+				We use essential cookies and limited analytics to improve your browsing experience.
+				See our <a href="privacy-policy.html">Privacy Policy</a> for details.
+			</p>
+			<div class="cookie-consent__actions" aria-label="Cookie consent actions">
+				<button class="btn cookie-consent__btn cookie-consent__btn--reject" id="cookie-reject" type="button">Reject</button>
+				<button class="btn cookie-consent__btn cookie-consent__btn--accept" id="cookie-accept" type="button">Accept</button>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script src="js/heshma.js"></script>
+	<script src="js/cookie-consent.js"></script>
+</body>
+</html>

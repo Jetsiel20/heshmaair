@@ -8,7 +8,7 @@ const APP_CONFIG = {
 const WA_MESSAGES = {
 	cooling: "Hi! I need to schedule a *Residential Cooling* service (AC Installation, Repair or Maintenance). Please contact me.",
 	heating: "Hi! I need to schedule a *Residential Heating* service (Furnace, Heat Pump or Thermostat). Please contact me.",
-	iaq: "Hi! I need help with *Air Quality & Thermostats* (Filtration, Smart Home or Duct Sealing). Please contact me.",
+	iaq: "Hi! I need help with *Air Quality & Thermostats* (Filtration, Smart Home or Thermostat Upgrade). Please contact me.",
 	commercial: "Hi! I need to schedule a *Commercial HVAC* service. Please contact me.",
 	quote: "Hi! I would like to get a *Free Quote* for an HVAC service. Please contact me.",
 	emergency: "Hi! I have an *HVAC Emergency* and need immediate assistance. Please call me ASAP."
@@ -34,11 +34,25 @@ function openWhatsApp(serviceKey, source) {
 	window.open(targetUrl, "_blank", "noopener");
 }
 
+function buildWhatsAppUrl(serviceKey, source) {
+	const message = buildWhatsAppMessage(serviceKey, source);
+	return `https://wa.me/${APP_CONFIG.whatsappNumber}?text=${encodeURIComponent(message)}`;
+}
+
+function injectWhatsAppHrefs() {
+	const triggers = document.querySelectorAll("a.js-whatsapp-trigger");
+	triggers.forEach((trigger) => {
+		const serviceKey = trigger.dataset.whatsappService || APP_CONFIG.defaultServiceKey;
+		trigger.href = buildWhatsAppUrl(serviceKey, "");
+	});
+}
+
 function bindWhatsAppTriggers() {
 	const triggers = document.querySelectorAll(".js-whatsapp-trigger");
 
 	triggers.forEach((trigger) => {
-		trigger.addEventListener("click", () => {
+		trigger.addEventListener("click", (e) => {
+			e.preventDefault();
 			const serviceKey = trigger.dataset.whatsappService || APP_CONFIG.defaultServiceKey;
 			const source = trigger.dataset.whatsappSource || "generic-cta";
 			openWhatsApp(serviceKey, source);
@@ -143,6 +157,7 @@ function setupMetricCounters() {
 }
 
 function initializeApp() {
+	injectWhatsAppHrefs();
 	bindWhatsAppTriggers();
 	setupNavbarState();
 	closeMobileMenuOnNavigation();
