@@ -93,75 +93,11 @@ function closeMobileMenuOnNavigation() {
 	});
 }
 
-function animateMetricValue(counterElement) {
-	const target = Number(counterElement.dataset.counterTarget || 0);
-	const prefix = counterElement.dataset.counterPrefix || "";
-	const suffix = counterElement.dataset.counterSuffix || "";
-	const durationMs = 1400;
-	const start = performance.now();
-
-	const tick = (now) => {
-		const progress = Math.min((now - start) / durationMs, 1);
-		const value = Math.floor(progress * target);
-		counterElement.textContent = `${prefix}${value}${suffix}`;
-
-		if (progress < 1) {
-			window.requestAnimationFrame(tick);
-			return;
-		}
-
-		counterElement.textContent = `${prefix}${target}${suffix}`;
-	};
-
-	window.requestAnimationFrame(tick);
-}
-
-function setupMetricCounters() {
-	const counters = document.querySelectorAll("[data-counter-target]");
-	if (counters.length === 0) {
-		return;
-	}
-
-	if (!("IntersectionObserver" in window)) {
-		counters.forEach((counterElement) => {
-			const target = counterElement.dataset.counterTarget || "0";
-			const prefix = counterElement.dataset.counterPrefix || "";
-			const suffix = counterElement.dataset.counterSuffix || "";
-			counterElement.textContent = `${prefix}${target}${suffix}`;
-		});
-		return;
-	}
-
-	const observer = new IntersectionObserver(
-		(entries) => {
-			entries.forEach((entry) => {
-				if (!entry.isIntersecting) {
-					return;
-				}
-
-				const counterElement = entry.target;
-				if (counterElement.dataset.counterAnimated === "true") {
-					observer.unobserve(counterElement);
-					return;
-				}
-
-				counterElement.dataset.counterAnimated = "true";
-				animateMetricValue(counterElement);
-				observer.unobserve(counterElement);
-			});
-		},
-		{ threshold: 0.35 }
-	);
-
-	counters.forEach((counterElement) => observer.observe(counterElement));
-}
-
 function initializeApp() {
 	injectWhatsAppHrefs();
 	bindWhatsAppTriggers();
 	setupNavbarState();
 	closeMobileMenuOnNavigation();
-	setupMetricCounters();
 }
 
 document.addEventListener("DOMContentLoaded", initializeApp);
