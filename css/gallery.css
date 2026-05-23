@@ -77,17 +77,16 @@
 	width: 100%;
 	overflow: hidden;
 	border-radius: 1.2rem;
-	aspect-ratio: 16 / 9;
+	aspect-ratio: 3 / 4;
 	background: rgba(4, 19, 36, 0.92);
 }
 
-.gallery-hero__feature-media video {
+.gallery-hero__feature-media img {
 	width: 100%;
 	height: 100%;
 	display: block;
-	object-fit: contain;
-	object-position: center center;
-	background: rgba(4, 19, 36, 0.92);
+	object-fit: cover;
+	object-position: center top;
 }
 
 .gallery-image-card__content h3 {

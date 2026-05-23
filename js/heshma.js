@@ -80,8 +80,8 @@ function closeMobileMenuOnNavigation() {
 		return;
 	}
 
-	const navLinks = navCollapse.querySelectorAll(".nav-link");
-	navLinks.forEach((link) => {
+	const closingLinks = navCollapse.querySelectorAll(".nav-link:not(.dropdown-toggle), .dropdown-item");
+	closingLinks.forEach((link) => {
 		link.addEventListener("click", () => {
 			if (window.innerWidth >= 992) {
 				return;
