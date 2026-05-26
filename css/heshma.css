@@ -1653,6 +1653,7 @@ button:focus:not(:focus-visible),
 		padding: 2rem 1rem;
 	}
 
+
 	.hero-copy h1 {
 		font-size: clamp(2.3rem, 10vw, 3.35rem);
 	}
@@ -1683,8 +1684,13 @@ button:focus:not(:focus-visible),
 	}
 
 	.about-section,
+	.plans-section,
 	.location-section {
 		padding: 4rem 0;
+	}
+
+	.plan-card {
+		padding: 1.5rem 1.25rem;
 	}
 
 	.about-section__grid {
@@ -1729,4 +1735,99 @@ button:focus:not(:focus-visible),
 		right: 0.8rem;
 		bottom: 0.8rem;
 	}
+}
+
+/* ── Offer card guarantee line ── */
+.offer-card__guarantee {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	margin: 0 0 1.75rem;
+	font-size: 0.9rem;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.75);
+}
+.offer-card__guarantee i {
+	color: #6ddb9a;
+	font-size: 1rem;
+}
+
+/* ── Maintenance plans section ── */
+.plans-section {
+	padding: 5rem 0;
+	background: #f6f9fc;
+}
+
+.plan-card {
+	position: relative;
+	padding: 2rem 1.75rem;
+	border-radius: var(--radius);
+	background: var(--clean-white);
+	border: 1px solid #d7e4f2;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.plan-card:hover {
+	box-shadow: 0 8px 24px rgba(0, 35, 71, 0.1);
+	transform: translateY(-3px);
+}
+
+.plan-card--featured {
+	border-color: var(--action-orange);
+	box-shadow: 0 6px 20px rgba(240, 121, 0, 0.15);
+}
+
+.plan-card__badge {
+	display: inline-block;
+	padding: 0.2rem 0.75rem;
+	border-radius: 999px;
+	background: var(--action-orange);
+	color: var(--clean-white);
+	font-family: var(--font-main);
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	align-self: flex-start;
+}
+
+.plan-card__name {
+	margin: 0;
+	font-family: var(--font-main);
+	font-size: 1.35rem;
+	font-weight: 800;
+	color: var(--primary-navy);
+}
+
+.plan-card__price {
+	margin: 0;
+	font-family: var(--font-main);
+	font-size: 2.25rem;
+	font-weight: 900;
+	color: var(--primary-navy);
+	line-height: 1;
+}
+.plan-card__price span {
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #6b7a8d;
+	margin-left: 0.15rem;
+}
+
+.plan-card__desc {
+	margin: 0;
+	font-size: 0.95rem;
+	line-height: 1.65;
+	color: #4a5568;
+	flex: 1;
+}
+
+.plans-section__note {
+	margin-top: 2.5rem;
+	font-size: 0.85rem;
+	color: #6b7a8d;
 }

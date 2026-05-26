@@ -27,7 +27,7 @@
 	  "@context": "https://schema.org",
 	  "@graph": [
 	    {
-	      "@type": "HVACBusiness",
+	      "@type": ["HVACBusiness", "LocalBusiness"],
 	      "@id": "https://heshmaairconditioning.com/#business",
 	      "name": "Heshma Air Conditioning LLC",
 	      "url": "https://heshmaairconditioning.com/",
@@ -49,8 +49,8 @@
 	      },
 	      "geo": {
 	        "@type": "GeoCoordinates",
-	        "latitude": 32.7332,
-	        "longitude": -96.4695
+	        "latitude": 32.73320,
+	        "longitude": -96.46950
 	      },
 	      "areaServed": ["Forney", "Dallas", "Heath", "Mesquite", "Greater Dallas Area", "Texas"],
 	      "openingHoursSpecification": {
@@ -110,8 +110,25 @@
 	              "name": "Commercial HVAC",
 	              "description": "Specialized commercial HVAC solutions, large unit installation and repair, preventive maintenance plans, and ductwork air balance in Forney and Dallas, TX."
 	            }
+	          },
+	          {
+	            "@type": "Offer",
+	            "itemOffered": {
+	              "@type": "Service",
+	              "name": "Coil Cleaning",
+	              "description": "Evaporator and condenser coil deep clean in Forney and Dallas, TX. Removes buildup that reduces efficiency. Flat rate service completed in a single visit."
+	            }
 	          }
 	        ]
+	      },
+	      "hasCredential": {
+	        "@type": "EducationalOccupationalCredential",
+	        "name": "TACLA120129E",
+	        "credentialCategory": "HVAC Contractor License",
+	        "recognizedBy": {
+	          "@type": "GovernmentOrganization",
+	          "name": "Texas Department of Licensing and Regulation"
+	        }
 	      }
 	    },
 	    {
@@ -130,7 +147,7 @@
 	      "inLanguage": "en-US",
 	      "isPartOf": { "@id": "https://heshmaairconditioning.com/#website" },
 	      "about": { "@id": "https://heshmaairconditioning.com/#business" },
-	      "dateModified": "2026-05-20"
+	      "dateModified": "2026-05-26"
 	    },
 	    {
 	      "@type": "FAQPage",
@@ -209,7 +226,7 @@
 				<div class="top-contact-bar__items" aria-label="Company service highlights">
 					<span><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> 24/7 Emergency Service</span>
 					<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Forney and Dallas, Texas</span>
-					<span><i class="fa-solid fa-certificate" aria-hidden="true"></i> TACLA Licensed HVAC Contractor</span>
+					<span><i class="fa-solid fa-certificate" aria-hidden="true"></i> TACLA Licensed &mdash; #120129E</span>
 				</div>
 				<a class="top-contact-bar__call" href="tel:+12144071394" aria-label="Call Heshma Air Conditioning now at 214 407 1394">Call +1 (214) 407-1394</a>
 			</div>
@@ -222,7 +239,7 @@
 				<a class="navbar-brand site-brand" href="#hero" aria-label="Heshma Air Conditioning home">
 					<img src="css/img/logo-oficial.webp" alt="Heshma Air Conditioning logo" width="120" height="84">
 					<span>
-						<small>TACLA Licensed · Forney, TX</small>
+						<small>TACLA #120129E &middot; Forney, TX</small>
 					</span>
 				</a>
 
@@ -277,7 +294,7 @@
 								<li><i class="fa-solid fa-dollar-sign" aria-hidden="true"></i> Flat $80 Diagnostic</li>
 								<li><i class="fa-solid fa-certificate" aria-hidden="true"></i> TACLA Licensed</li>
 							</ul>
-							<a class="hero-rating" href="https://www.google.com/search?kgmid=/g/11s7l1b1cd" target="_blank" rel="noopener noreferrer" aria-label="5.0 stars, 11 Google reviews — click to read or leave a review">
+							<a class="hero-rating" href="https://www.google.com/search?kgmid=/g/11s7l1b1cd" target="_blank" rel="noopener noreferrer" aria-label="5.0 stars on Google — click to read or leave a review">
 								<span class="hero-rating__stars" aria-hidden="true">
 									<i class="fa-solid fa-star"></i>
 									<i class="fa-solid fa-star"></i>
@@ -304,8 +321,8 @@
 					<p>Pick your problem. We come to you — same day. Call, text, or WhatsApp — a real technician answers, not a call center.</p>
 				</div>
 
-				<div class="row g-4">
-					<div class="col-lg-3 col-md-6">
+				<div class="row g-4 justify-content-center">
+					<div class="col-xl col-lg-4 col-md-6">
 						<article class="service-card" aria-labelledby="service-cooling-title">
 							<div class="service-card__icon" aria-hidden="true">
 								<svg class="service-card__icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -314,19 +331,19 @@
 							</div>
 							<h3 id="service-cooling-title">Residential Cooling</h3>
 							<ul>
-								<li>AC Installation & Replacement</li>
+								<li>Full System Replacement &amp; Installation</li>
 								<li>24/7 Emergency AC Repair</li>
-							<li>Capacitor Replacement</li>
+								<li>Capacitor Replacement</li>
 								<li>Preventive Maintenance</li>
 								<li>Air Handler Unit Services</li>
 								<li>Ductless Mini-Split Systems</li>
 							</ul>
 							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call to fix your AC now"><i class="fa-solid fa-phone" aria-hidden="true"></i> Fix My AC</a>
-					<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="cooling" data-whatsapp-source="services-cooling" aria-label="WhatsApp for cooling service">or WhatsApp →</a>
+							<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="cooling" data-whatsapp-source="services-cooling" aria-label="WhatsApp for cooling service">or WhatsApp →</a>
 						</article>
 					</div>
 
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl col-lg-4 col-md-6">
 						<article class="service-card" aria-labelledby="service-heating-title">
 							<div class="service-card__icon" aria-hidden="true">
 								<svg class="service-card__icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -335,36 +352,36 @@
 							</div>
 							<h3 id="service-heating-title">Residential Heating</h3>
 							<ul>
-								<li>Heating Installation & Replacement</li>
-								<li>Furnace Installation & Repair</li>
-								<li>Heat Pump Installation & Repair</li>
-								<li>Heating Maintenance & Tune-ups</li>
-								<li>Thermostat Installation & Repair</li>
+								<li>Heating Installation &amp; Replacement</li>
+								<li>Furnace Installation &amp; Repair</li>
+								<li>Heat Pump Installation &amp; Repair</li>
+								<li>Heating Maintenance &amp; Tune-ups</li>
+								<li>Thermostat Installation &amp; Repair</li>
 							</ul>
 							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call to fix your heating now"><i class="fa-solid fa-phone" aria-hidden="true"></i> Fix My Heat</a>
-					<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="heating" data-whatsapp-source="services-heating" aria-label="WhatsApp for heating service">or WhatsApp →</a>
+							<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="heating" data-whatsapp-source="services-heating" aria-label="WhatsApp for heating service">or WhatsApp →</a>
 						</article>
 					</div>
 
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl col-lg-4 col-md-6">
 						<article class="service-card" aria-labelledby="service-iaq-title">
 							<div class="service-card__icon" aria-hidden="true">
 								<svg class="service-card__icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
 									<path d="M3 8h11a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h9a2.5 2.5 0 1 1-2.5 2.5"/>
 								</svg>
 							</div>
-							<h3 id="service-iaq-title">Air Quality & Thermostats</h3>
+							<h3 id="service-iaq-title">Air Quality &amp; Thermostats</h3>
 							<ul>
-								<li>Thermostat Installation & Upgrades</li>
+								<li>Thermostat Installation &amp; Upgrades</li>
 								<li>Smart Home Integration</li>
 								<li>Air Filtration Systems</li>
 							</ul>
 							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call to improve your air quality now"><i class="fa-solid fa-phone" aria-hidden="true"></i> Improve My Air</a>
-					<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="iaq" data-whatsapp-source="services-iaq" aria-label="WhatsApp for air quality service">or WhatsApp →</a>
+							<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="iaq" data-whatsapp-source="services-iaq" aria-label="WhatsApp for air quality service">or WhatsApp →</a>
 						</article>
 					</div>
 
-					<div class="col-lg-3 col-md-6">
+					<div class="col-xl col-lg-4 col-md-6">
 						<article class="service-card" aria-labelledby="service-commercial-title">
 							<div class="service-card__icon" aria-hidden="true">
 								<svg class="service-card__icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -374,12 +391,31 @@
 							<h3 id="service-commercial-title">Commercial HVAC</h3>
 							<ul>
 								<li>Commercial System Replacement</li>
-								<li>Large Unit Installation & Repair</li>
+								<li>Large Unit Installation &amp; Repair</li>
 								<li>Preventative Maintenance Plans</li>
-								<li>Ductwork & Air Balance</li>
+								<li>Duct Replacement &amp; Air Balance</li>
 							</ul>
 							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call for a commercial HVAC quote"><i class="fa-solid fa-phone" aria-hidden="true"></i> Get a Quote</a>
-					<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="commercial" data-whatsapp-source="services-commercial" aria-label="WhatsApp for commercial HVAC service">or WhatsApp →</a>
+							<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="commercial" data-whatsapp-source="services-commercial" aria-label="WhatsApp for commercial HVAC service">or WhatsApp →</a>
+						</article>
+					</div>
+
+					<div class="col-xl col-lg-4 col-md-6">
+						<article class="service-card" aria-labelledby="service-coil-title">
+							<div class="service-card__icon" aria-hidden="true">
+								<svg class="service-card__icon-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+									<path d="M3 7c3 0 3 4 6 4s3-4 6-4 3 4 6 4M3 14c3 0 3 4 6 4s3-4 6-4 3 4 6 4M17 2l2 3-2 3M7 2L5 5l2 3"/>
+								</svg>
+							</div>
+							<h3 id="service-coil-title">Coil Cleaning</h3>
+							<ul>
+								<li>Evaporator &amp; Condenser Coil Deep Clean</li>
+								<li>Removes buildup that forces your AC to work 37% harder</li>
+								<li>Improves cooling efficiency &amp; extends system life</li>
+								<li>Flat rate — $500, done in one visit</li>
+							</ul>
+							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call to book a coil cleaning"><i class="fa-solid fa-phone" aria-hidden="true"></i> Book Coil Cleaning</a>
+							<a class="service-card__wa-link js-whatsapp-trigger" href="#" data-whatsapp-service="coil-cleaning" data-whatsapp-source="services-coil" aria-label="WhatsApp for coil cleaning service">or WhatsApp →</a>
 						</article>
 					</div>
 				</div>
@@ -395,16 +431,18 @@
 		<section class="offer-section" id="offer" aria-labelledby="offer-title">
 			<div class="container">
 				<div class="offer-card">
-					<span class="offer-card__badge">&#9728; Summer Priority &middot; Slots Fill Fast in July</span>
+					<span class="offer-card__badge">&#9728; June Heat Is Here &middot; Same-Day Slots Fill Fast</span>
 					<h2 id="offer-title">Flat $80 Service Visit — Free Diagnostic Included</h2>
 					<p>Most HVAC companies won't tell you the cost until after they open your unit. We tell you before we touch anything. Written quote. No pressure. No surprises — ever.</p>
-					<p class="offer-card__urgency">July and August are our busiest months — same-day availability is not guaranteed if you wait.</p>
+					<p class="offer-card__urgency">Dallas summers peak in June &mdash; same-day slots fill fast. Don't wait for a complete system failure.</p>
 					<ul class="offer-card__list">
 						<li>Full system diagnostic at no extra charge</li>
 						<li>Written quote before any repair begins</li>
 						<li>$80 applied toward your repair cost</li>
 						<li>Same rate nights, weekends &amp; holidays</li>
+						<li>Free in-home estimate for full system replacements</li>
 					</ul>
+					<p class="offer-card__guarantee"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> 100% satisfaction guaranteed &mdash; we come back at no charge if the work doesn't meet your standard.</p>
 					<div class="offer-card__actions">
 						<a class="btn btn-offer-primary" href="tel:+12144071394" aria-label="Call Heshma Air Conditioning at 214 407 1394">Call (214) 407-1394</a>
 						<a class="btn btn-offer-secondary" href="sms:+12144071394" aria-label="Send a text message to Heshma Air Conditioning">Send a Text</a>
@@ -415,12 +453,50 @@
 			</div>
 		</section>
 
+		<section class="plans-section" id="maintenance-plans" aria-labelledby="plans-title">
+			<div class="container">
+				<div class="section-heading text-center">
+					<p class="section-heading__eyebrow">Prevent the Emergency. Lower the Bill.</p>
+					<h2 id="plans-title">Maintenance Plans — Two Visits a Year, Zero Surprises</h2>
+					<p>Most AC emergencies are preventable. A plan keeps your system tuned before summer heat and before winter cold — and moves you to the front of the line when something does go wrong.</p>
+				</div>
+				<div class="row g-4 justify-content-center">
+					<div class="col-lg-4 col-md-6">
+						<article class="plan-card" aria-label="Basic maintenance plan">
+							<h3 class="plan-card__name">Basic</h3>
+							<p class="plan-card__price">$149<span>/year</span></p>
+							<p class="plan-card__desc">Two seasonal tune-ups per year. Full system inspection, filter check, and a written report on your system's condition. The essentials, covered.</p>
+							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call about the Basic maintenance plan"><i class="fa-solid fa-phone" aria-hidden="true"></i> Ask About This Plan</a>
+						</article>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<article class="plan-card plan-card--featured" aria-label="Pro maintenance plan">
+							<span class="plan-card__badge">Most Popular</span>
+							<h3 class="plan-card__name">Pro</h3>
+							<p class="plan-card__price">$199<span>/year</span></p>
+							<p class="plan-card__desc">Everything in Basic, plus waived diagnostic fees and repair discounts. One repair call often pays for the full year. This is what most customers choose.</p>
+							<a class="btn btn-offer-primary" href="tel:+12144071394" aria-label="Call about the Pro maintenance plan"><i class="fa-solid fa-phone" aria-hidden="true"></i> Ask About This Plan</a>
+						</article>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<article class="plan-card" aria-label="Premium maintenance plan">
+							<h3 class="plan-card__name">Premium</h3>
+							<p class="plan-card__price">$249<span>/year</span></p>
+							<p class="plan-card__desc">Full coverage including parts protection. Built for systems 10+ years old or homeowners who want complete peace of mind — nothing to think about.</p>
+							<a class="btn btn-service" href="tel:+12144071394" aria-label="Call about the Premium maintenance plan"><i class="fa-solid fa-phone" aria-hidden="true"></i> Ask About This Plan</a>
+						</article>
+					</div>
+				</div>
+				<p class="plans-section__note text-center">No contracts. Cancel anytime. Call us if you need help picking the right plan for your system.</p>
+			</div>
+		</section>
+
 		<section class="reviews-section" id="reviews" aria-labelledby="reviews-title">
 			<div class="container">
 				<div class="section-heading text-center">
 					<p class="section-heading__eyebrow">Real Customers. Real Jobs. Forney &amp; East DFW.</p>
 					<h2 id="reviews-title">Don't Take Our Word for It.</h2>
-					<p>11 five-star reviews on Google. Every one earned.</p>
+					<p>Five-star reviews on Google. Every one earned.</p>
 				</div>
 
 				<div class="row g-4 justify-content-center">
@@ -485,8 +561,8 @@
 				</div>
 
 				<div class="reviews-section__cta">
-					<a class="reviews-section__link" href="https://www.google.com/search?kgmid=/g/11s7l1b1cd" target="_blank" rel="noopener noreferrer" aria-label="See all 11 Google reviews for Heshma Air Conditioning">
-						<i class="fa-brands fa-google" aria-hidden="true"></i> See all 11 reviews on Google
+					<a class="reviews-section__link" href="https://www.google.com/search?kgmid=/g/11s7l1b1cd" target="_blank" rel="noopener noreferrer" aria-label="See all Google reviews for Heshma Air Conditioning">
+						<i class="fa-brands fa-google" aria-hidden="true"></i> See all our reviews on Google
 					</a>
 				</div>
 
@@ -698,7 +774,7 @@
 							<img src="css/img/logo-oficial.webp" alt="Heshma Air Conditioning logo" width="144" height="101">
 							<div>
 								<p id="footer-title" class="footer-brand__head-name">Heshma Air Conditioning LLC</p>
-								<p>TACLA Licensed HVAC Contractor</p>
+								<p>TACLA Licensed HVAC Contractor &mdash; Lic. #120129E</p>
 							</div>
 						</div>
 						<p class="footer-brand__text">Reliable heating and cooling solutions for homeowners and businesses in Forney, Dallas, and surrounding areas.</p>
@@ -751,14 +827,12 @@
 							<a href="https://www.instagram.com/heshmaairconditioning?igsh=MXdzNTg1ZTU2YnJuMA==" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on Instagram">
 								<i class="fa-brands fa-instagram" aria-hidden="true"></i>
 							</a>
-						
-								<a href="https://www.youtube.com/@hesmaairconditioning" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on YouTube">
-									<i class="fa-brands fa-youtube" aria-hidden="true"></i>
-								</a>
-							
-								<a href="https://www.tiktok.com/@heysersh2016" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on TikTok">
-									<i class="fa-brands fa-tiktok" aria-hidden="true"></i>
-								</a>
+							<a href="https://www.youtube.com/@hesmaairconditioning" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on YouTube">
+								<i class="fa-brands fa-youtube" aria-hidden="true"></i>
+							</a>
+							<a href="https://www.tiktok.com/@heysersh2016" target="_blank" rel="noopener noreferrer" aria-label="Visit Heshma Air Conditioning on TikTok">
+								<i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+							</a>
 							</div>
 						<a class="btn btn-footer-secondary" href="tel:+12144071394" aria-label="Call Heshma Air Conditioning">Call to Request Service</a>
 					</div>
