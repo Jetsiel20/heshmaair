@@ -656,15 +656,6 @@ button:focus:not(:focus-visible),
 	text-align: center;
 }
 
-.offer-card::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	border-radius: 1.5rem;
-	box-shadow: 0 0 28px 6px rgba(255, 130, 0, 0.3);
-	pointer-events: none;
-	animation: cardGlow 5s ease-in-out infinite alternate;
-}
 
 .offer-card__badge {
 	display: inline-block;
@@ -1825,7 +1816,7 @@ button:focus:not(:focus-visible),
 .plan-card__price span {
 	font-size: 0.875rem;
 	font-weight: 500;
-	color: #6b7a8d;
+	color: #5a6a7a;
 	margin-left: 0.15rem;
 }
 
@@ -1840,5 +1831,5 @@ button:focus:not(:focus-visible),
 .plans-section__note {
 	margin-top: 2.5rem;
 	font-size: 0.85rem;
-	color: #6b7a8d;
+	color: #5a6a7a;
 }
