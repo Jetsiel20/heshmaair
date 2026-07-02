@@ -1,3 +1,12 @@
+// Google Ads conversion ID for "reservar cita".
+const CONVERSION_SEND_TO = 'AW-10990584376/eSY1CPLD68UZELiE3Pgo';
+
+function fireConversionEvent() {
+	if (typeof gtag === 'function') {
+		gtag('event', 'conversion', { 'send_to': CONVERSION_SEND_TO });
+	}
+}
+
 // Core configuration layer.
 const APP_CONFIG = {
 	whatsappNumber: "12144071394",
@@ -53,6 +62,7 @@ function bindWhatsAppTriggers() {
 	triggers.forEach((trigger) => {
 		trigger.addEventListener("click", (e) => {
 			e.preventDefault();
+			fireConversionEvent();
 			const serviceKey = trigger.dataset.whatsappService || APP_CONFIG.defaultServiceKey;
 			const source = trigger.dataset.whatsappSource || "generic-cta";
 			openWhatsApp(serviceKey, source);
@@ -93,9 +103,16 @@ function closeMobileMenuOnNavigation() {
 	});
 }
 
+function bindConversionTriggers() {
+	document.querySelectorAll('a[href^="tel:"], a[href^="sms:"]').forEach((link) => {
+		link.addEventListener('click', fireConversionEvent);
+	});
+}
+
 function initializeApp() {
 	injectWhatsAppHrefs();
 	bindWhatsAppTriggers();
+	bindConversionTriggers();
 	setupNavbarState();
 	closeMobileMenuOnNavigation();
 }
