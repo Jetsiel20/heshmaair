@@ -59,6 +59,7 @@ RewriteRule ^ https://heshmaairconditioning.com%{REQUEST_URI} [L,R=301]
 RewriteRule ^projects/?$ /gallery.html [L,R=301]
 RewriteRule ^residential-hvac/?$ /ac-repair-forney-tx.html [L,R=301]
 RewriteRule ^services/?$ /index.html [L,R=301]
+RewriteRule ^privacy-policy/?$ /privacy-policy.html [L,R=301]
 
 # -------------------------------------------------------
 # Custom 404
