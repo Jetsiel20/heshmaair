@@ -389,6 +389,16 @@ button:focus:not(:focus-visible),
 	text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 
+.hero-motto {
+	margin: 0;
+	font-size: 0.85rem;
+	font-weight: 600;
+	font-style: italic;
+	letter-spacing: 0.04em;
+	color: rgba(255, 255, 255, 0.68);
+	text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
 .hero-call-btn {
 	font-size: 1.05rem;
 	display: flex;
@@ -471,6 +481,113 @@ button:focus:not(:focus-visible),
 
 .hero-rating__stars i {
 	font-size: 0.8rem;
+}
+
+/* City landing page hero — photo background variants (Heath, Mesquite, Forney, Dallas). */
+.hero-section--city-forney,
+.hero-section--city-dallas,
+.hero-section--city-heath,
+.hero-section--city-mesquite {
+	position: relative;
+	background-position: top center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.hero-section--city-forney { background-image: url('img/heshma-1.webp'); }
+.hero-section--city-dallas { background-image: url('img/heshma-3.webp'); }
+.hero-section--city-heath { background-image: url('img/heshma-4.webp'); }
+.hero-section--city-mesquite { background-image: url('img/heshma-2.webp'); }
+
+.hero-section--city-forney::before,
+.hero-section--city-dallas::before,
+.hero-section--city-heath::before,
+.hero-section--city-mesquite::before {
+	display: block;
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(0, 15, 40, 0.78) 0%, rgba(0, 15, 40, 0.62) 45%, rgba(0, 15, 40, 0.82) 100%);
+	z-index: 0;
+}
+.hero-section--city-forney > .container,
+.hero-section--city-dallas > .container,
+.hero-section--city-heath > .container,
+.hero-section--city-mesquite > .container {
+	position: relative;
+	z-index: 1;
+}
+
+/* City landing page hero — copy block typography (previously unstyled). */
+.hero-copy {
+	max-width: 700px;
+}
+
+.hero-copy__eyebrow {
+	margin-bottom: 0.8rem;
+	font-family: var(--font-main);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.85rem;
+	color: var(--brand-blue-bright);
+}
+
+.hero-copy h1 {
+	font-family: var(--font-main);
+	font-size: clamp(1.7rem, 4vw, 2.5rem);
+	font-weight: 800;
+	line-height: 1.15;
+	margin-bottom: 1rem;
+	color: var(--clean-white);
+	text-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+}
+
+.hero-copy__lead {
+	font-size: 1.1rem;
+	line-height: 1.7;
+	color: rgba(255, 255, 255, 0.92);
+	margin-bottom: 1.5rem;
+	text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-copy__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1rem;
+	margin-bottom: 1rem;
+}
+
+.hero-wa-link {
+	margin-bottom: 1.5rem;
+}
+.hero-wa-link a {
+	color: rgba(255, 255, 255, 0.85);
+	font-weight: 600;
+	text-decoration: underline;
+}
+.hero-wa-link a:hover {
+	color: var(--clean-white);
+}
+
+.hero-trust-list {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem 1.2rem;
+	padding: 0;
+	margin: 0 0 1.5rem;
+	font-size: 0.92rem;
+	color: rgba(255, 255, 255, 0.92);
+}
+.hero-trust-list li {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+.hero-trust-list i {
+	color: var(--brand-blue-bright);
 }
 
 .hero-rating__text strong {
@@ -1195,6 +1312,16 @@ button:focus:not(:focus-visible),
 	margin: 0 0 2rem;
 }
 
+.about-section__motto {
+	margin: 0.4rem 0 0;
+	font-family: var(--font-main);
+	font-size: 1rem;
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: 0.03em;
+	color: var(--brand-blue-bright);
+}
+
 .about-section__grid {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1245,6 +1372,118 @@ button:focus:not(:focus-visible),
 	font-style: normal;
 }
 
+/* Section module: financing. */
+.financing-hero {
+	padding: calc(var(--header-offset) + 3rem) 0 3.5rem;
+	background: linear-gradient(135deg, var(--primary-navy) 0%, var(--secondary-blue) 100%);
+	color: var(--clean-white);
+}
+
+.financing-hero__eyebrow {
+	margin-bottom: 0.9rem;
+	color: var(--brand-blue-bright);
+	font-family: var(--font-main);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.85rem;
+}
+
+.financing-hero h1 {
+	font-family: var(--font-main);
+	font-size: clamp(1.8rem, 4vw, 2.6rem);
+	font-weight: 800;
+	line-height: 1.15;
+	margin-bottom: 1rem;
+}
+
+.financing-hero__lead {
+	max-width: 720px;
+	font-size: 1.1rem;
+	line-height: 1.75;
+	color: rgba(255, 255, 255, 0.9);
+	margin-bottom: 0.75rem;
+}
+
+.financing-hero__prompt {
+	max-width: 720px;
+	font-weight: 600;
+	margin-bottom: 1.5rem;
+}
+
+.financing-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	margin-bottom: 2rem;
+}
+
+.financing-disclosure {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.25rem;
+	max-width: 780px;
+	padding: 1.1rem 1.4rem;
+	border-radius: 0.9rem;
+	background: var(--clean-white);
+}
+
+.financing-disclosure__logo {
+	height: 42px;
+	width: auto;
+	flex-shrink: 0;
+}
+
+.financing-disclosure__text {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.6;
+	color: #4d6074;
+	flex: 1;
+	min-width: 240px;
+}
+
+.financing-benefits {
+	padding: 5rem 0;
+	background: linear-gradient(180deg, #ffffff 0%, #f3f7fc 100%);
+}
+
+.financing-benefits__list {
+	list-style: none;
+	padding: 0;
+	margin: 1.5rem 0 2rem;
+	display: grid;
+	gap: 0.7rem;
+}
+
+.financing-benefits__list li {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.7rem;
+	font-size: 1.02rem;
+	line-height: 1.5;
+	color: var(--text-dark);
+}
+
+.financing-benefits__list li i {
+	margin-top: 0.2rem;
+	color: var(--action-orange);
+}
+
+.financing-trust-nod {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin: 0 0 1.5rem;
+	font-weight: 600;
+	color: var(--primary-navy);
+}
+
+.financing-trust-nod i {
+	color: #f5a820;
+}
+
 /* Section module: footer. */
 .site-footer {
 	padding: 4.2rem 0 1rem;
@@ -1287,6 +1526,15 @@ button:focus:not(:focus-visible),
 	color: #8ec6ff;
 	font-size: 0.9rem;
 	font-weight: 600;
+}
+
+.footer-brand__motto {
+	margin: 0 0 0.6rem;
+	font-family: var(--font-main);
+	font-weight: 700;
+	font-style: italic;
+	letter-spacing: 0.03em;
+	color: #8ec6ff;
 }
 
 .footer-brand__text {
