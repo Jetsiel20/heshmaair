@@ -105,7 +105,23 @@ function closeMobileMenuOnNavigation() {
 
 function bindConversionTriggers() {
 	document.querySelectorAll('a[href^="tel:"], a[href^="sms:"]').forEach((link) => {
-		link.addEventListener('click', fireConversionEvent);
+		link.addEventListener('click', (e) => {
+			e.preventDefault();
+			const destination = link.href;
+			const navigate = () => {
+				window.location.href = destination;
+			};
+
+			if (typeof gtag === 'function') {
+				gtag('event', 'conversion', {
+					'send_to': CONVERSION_SEND_TO,
+					'event_callback': navigate,
+					'event_timeout': 2000
+				});
+			} else {
+				navigate();
+			}
+		});
 	});
 }
 
